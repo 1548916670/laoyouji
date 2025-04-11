@@ -1,0 +1,793 @@
+/* 基本样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('images/background.jpg'); /* 添加整体背景图片 */
+    background-attachment: fixed; /* 固定背景，不随滚动而移动 */
+    background-size: 100%; /* 确保背景覆盖整个页面 */
+    background-position: center 70px; /* 居中显示背景并向下偏移20px */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* 添加半透明白色背景 */
+    border-radius: 10px;
+}
+
+/* 导航栏样式 */
+/* 导航条样式修改 - 添加背景图片 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-image: url('images/nav-background.jpg'); /* 添加背景图片 */
+    background-size: 6%; /* 缩小背景图片至6% */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    background-position: center; /* 居中显示图片 */
+    background-color: #863c3c; /* 添加背景色填充剩余空间 */
+    color: white;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* 滚动时添加半透明黑色背景 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 删除标题字体修改部分 */
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 添加文字阴影增加可读性 */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 各部分通用样式 */
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f04a4a;
+    font-size: 2.5rem;
+    letter-spacing: 1px; /* 增加字母间距 */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 添加文字阴影增加可读性 */
+}
+
+nav ul li a:hover {
+    color: #f04a4a; /* 鼠标悬停时变为红色 */
+}
+/* 英雄区域样式 */
+.hero {
+    height: 100vh;
+    background-image: url('images/friends-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #f04a4a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #d03a3a;
+}
+
+/* 各部分通用样式 */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f04a4a;
+    font-size: 2.5rem;
+}
+
+/* 角色卡片样式 */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.character-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+}
+
+/* 角色卡片基本样式 */
+.character-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* 各角色图片单独样式 */
+.rachel-card img {
+    width: 65%;
+    height: 285px;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 10px;
+    object-position: center 70%; /* 调整图片显示位置 */
+}
+
+.monica-card img {
+    width: 65%;
+    height: 285px;
+    margin: 10px auto 0; /* 修正margin值 */
+    display: block;
+    border-radius: 10px;
+    object-position: center 50%;
+}
+
+.phoebe-card img {
+    width: 92%;
+    height: 285px;
+    margin: 10px auto 0; /* 将800px改为更合理的值 */
+    display: block;
+    border-radius: 10px;
+    object-position: center 1%;
+}
+
+.joey-card img {
+    width: 88%;
+    height: 285px;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 10px;
+    object-position: center 25%; /* 调整图片显示位置 */
+}
+
+.chandler-card img {
+    width: 86%;
+    height: 285px;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 10px;
+    object-position: center 7%; /* 调整图片显示位置 */
+}
+
+.ross-card img {
+    width: 90%;
+    height: 285px;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 10px;
+    object-position: center 30%; /* 调整图片显示位置 */
+}
+.character-card h3 {
+    padding: 15px;
+    color: #f04a4a;
+}
+
+.character-card p {
+    padding: 0 15px 15px;
+}
+
+/* 季数样式 */
+.season {
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.season h3 {
+    color: #f04a4a;
+    margin-bottom: 10px;
+}
+
+/* 台词样式 */
+.quote {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    border-left: 5px solid #f04a4a;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+/* 图库样式 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: black; /* 将文本颜色从white改为black */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 添加以下样式以支持新页面 */
+
+/* 页面头部样式 */
+.page-header {
+    background-color: #f04a4a;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    margin-top: 100px;
+}
+
+/* 角色介绍页面标题特殊样式 */
+.characters-page .page-header h2 {
+    color: rgb(187, 30, 30); /* 将角色介绍页面的标题改为黑色 */
+}
+
+/* 角色介绍页面描述文字样式 */
+.characters-page .page-header p {
+    color: black; /* 将角色介绍页面的描述文字改为黑色 */
+}
+
+/* 剧集详情页面描述文字样式 */
+.episodes-page .page-header p {
+    color: black; /* 将剧集详情页面的描述文字改为黑色 */
+}
+
+/* 经典台词页面描述文字样式 */
+.quotes-page .page-header p {
+    color: black; /* 将经典台词页面的描述文字改为黑色 */
+}
+
+/* 精彩瞬间页面描述文字样式 */
+.gallery-page .page-header p {
+    color: black; /* 将精彩瞬间页面的描述文字改为黑色 */
+}
+
+/* 关于剧集页面描述文字样式 */
+.about-page .page-header p {
+    color: black; /* 将关于剧集页面的描述文字改为黑色 */
+}
+
+.page-header h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+}
+
+/* 角色详情页样式 */
+.characters-detail {
+    padding: 50px 0;
+}
+
+.character-profile {
+    display: flex;
+    margin-bottom: 60px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.character-image {
+    flex: 0 0 300px;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-info {
+    flex: 1;
+    padding: 30px;
+}
+
+.character-info h3 {
+    color: #f04a4a;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.actor {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.character-bio p {
+    margin-bottom: 15px;
+}
+
+.character-bio h4 {
+    color: #f04a4a;
+    margin: 20px 0 10px;
+}
+
+.character-bio ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.character-bio li {
+    margin-bottom: 5px;
+}
+
+/* 剧集页面样式 */
+.season-navigation {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+}
+
+.season-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.season-btn {
+    background-color: white;
+    border: 2px solid #f04a4a;
+    color: #f04a4a;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.season-btn:hover, .season-btn.active {
+    background-color: #f04a4a;
+    color: white;
+}
+
+.episodes {
+    padding: 50px 0;
+}
+
+.season-container {
+    display: none;
+}
+
+.season-container.active-season {
+    display: block;
+}
+
+.season-container h3 {
+    color: #f04a4a;
+    border-bottom: 2px solid #f04a4a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.season-overview {
+    margin-bottom: 30px;
+}
+
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.episode-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.episode-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.episode-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.episode-info h4 {
+    color: #f04a4a;
+    margin-bottom: 10px;
+}
+
+.alt-title {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.episode-highlights {
+    margin-top: 15px;
+}
+
+.episode-highlights h5 {
+    color: #f04a4a;
+    margin-bottom: 5px;
+}
+
+.episode-highlights ul {
+    margin-left: 20px;
+}
+
+/* 台词页面样式 */
+.quotes-filter {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 2px solid #f04a4a;
+    color: #f04a4a;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #f04a4a;
+    color: white;
+}
+
+.quotes-collection {
+    padding: 50px 0;
+}
+
+.quote-card {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.quote-image {
+    flex: 0 0 200px;
+}
+
+.quote-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quote-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.quote-content blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #f04a4a;
+    border-left: 5px solid #f04a4a;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.quote-character {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quote-context {
+    margin-bottom: 10px;
+}
+
+.quote-episode {
+    font-style: italic;
+    color: #666;
+}
+
+/* 图库页面样式 */
+.gallery-filter {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+}
+
+.gallery-collection {
+    padding: 50px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+.gallery-caption h4 {
+    margin-bottom: 5px;
+}
+
+.episode-ref {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* 灯箱效果 */
+.lightbox-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .trivia-item {
+        flex-direction: column;
+    }
+    
+    .trivia-item img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 幻灯片样式 */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.caption {
+    color: #f04a4a;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* 前后按钮 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(240, 74, 74, 0.8);
+}
+
+/* 导航点 */
+.dots-container {
+    margin: 20px 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #f04a4a;
+}
+
+/* 淡入淡出动画 */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
